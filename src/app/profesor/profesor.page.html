@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profesor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="full" (click)="generarQR()">Generar QR</ion-button>
+  <div *ngIf="qrCodeImage">
+    <img [src]="qrCodeImage" alt="QR Code">
+  </div>
+  <ion-button expand="full" color="danger" (click)="logout()">Logout</ion-button>
+</ion-content>
