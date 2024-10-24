@@ -11,48 +11,45 @@
       "usuario": "bryan",
       "contrasena": "1234",
       "rol": "profesor"
+    },
+    {
+      "id": "3",
+      "usuario": "maria",
+      "contrasena": "1234",
+      "rol": "alumno"
+    },
+    {
+      "id": "4",
+      "usuario": "juan",
+      "contrasena": "1234",
+      "rol": "profesor"
+    },
+    {
+      "id": "5",
+      "usuario": "ana",
+      "contrasena": "1234",
+      "rol": "alumno"
+    },
+    {
+      "id": "6",
+      "usuario": "pedro",
+      "contrasena": "1234",
+      "rol": "profesor"
     }
   ],
   "clases": [
     {
-      "id": "1728568357227",
+      "id": 1729780242286,
       "profesor": {
         "id": "2",
-        "usuario": "profesor1",
+        "usuario": "bryan",
         "contrasena": "1234",
         "rol": "profesor"
       },
-      "fecha": "2024-10-10T13:52:37.239Z"
-    },
-    {
-      "id": "1728568374273",
-      "profesor": {
-        "id": "2",
-        "usuario": "profesor1",
-        "contrasena": "1234",
-        "rol": "profesor"
-      },
-      "fecha": "2024-10-10T13:52:54.277Z"
-    },
-    {
-      "id": 1728570407944,
-      "profesor": {
-        "id": "1",
-        "usuario": "alumno1",
-        "contrasena": "1234",
-        "rol": "alumno"
-      },
-      "fecha": "2024-10-10T14:26:47.948Z"
-    },
-    {
-      "id": 1728571048211,
-      "profesor": {
-        "id": "1",
-        "usuario": "alumno1",
-        "contrasena": "1234",
-        "rol": "alumno"
-      },
-      "fecha": "2024-10-10T14:37:28.219Z"
+      "fecha": "2024-10-24T14:30:42.292Z",
+      "descripcion": "Clase de matematicas",
+      "asignatura": "Matemáticas",
+      "observaciones": "Ninguna"
     }
   ]
 }

@@ -1,13 +1,40 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Profesor</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Profesor</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button expand="full" (click)="generarQR()">Generar QR</ion-button>
-  <div *ngIf="qrCodeImage">
-    <img [src]="qrCodeImage" alt="QR Code">
-  </div>
-  <ion-button expand="full" color="danger" (click)="logout()">Logout</ion-button>
+    <ion-item>
+        <ion-label position="floating">Descripción de la clase</ion-label>
+        <ion-input [(ngModel)]="descripcionClase"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Asignatura</ion-label>
+        <ion-input [(ngModel)]="asignatura"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Observaciones</ion-label>
+        <ion-input [(ngModel)]="observaciones"></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="generarQR()">Generar QR</ion-button>
+    <div *ngIf="qrCodeImage">
+        <img [src]="qrCodeImage" alt="QR Code" />
+    </div>
+    <ion-button expand="full" color="danger" (click)="logout()"
+        >Logout</ion-button
+    >
+
+    <ion-list>
+        <ion-list-header>
+            <ion-label>Clases Anteriores</ion-label>
+        </ion-list-header>
+        <ion-item *ngFor="let clase of clasesAnteriores">
+            <ion-label>
+                <h2>{{ clase.descripcion }}</h2>
+                <p>{{ clase.asignatura }} - {{ clase.fecha | date:'short' }}</p>
+                <p>{{ clase.observaciones }}</p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
 </ion-content>
