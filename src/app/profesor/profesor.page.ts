@@ -16,6 +16,7 @@ export class ProfesorPage implements OnInit {
   asignatura: string = "";
   observaciones: string = "";
   clasesAnteriores: any[] = [];
+  asignaturas: string[] = [];
 
   constructor(
     private router: Router,
@@ -56,11 +57,17 @@ export class ProfesorPage implements OnInit {
     this.clasesAnteriores = await response.json();
   }
 
+  async loadAsignaturas() {
+    const usuario = await this.storage.get("usuario");
+    this.asignaturas = usuario.asignaturas;
+  }
+
   logout() {
     this.authService.logout();
   }
 
   async ngOnInit() {
     await this.loadClasesAnteriores();
+    await this.loadAsignaturas();
   }
 }

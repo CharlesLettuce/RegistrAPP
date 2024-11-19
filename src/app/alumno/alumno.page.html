@@ -4,7 +4,26 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <div class="welcome-container">
+    <h2>Bienvenido, {{ usuario?.usuario }}</h2>
+    <p>Escanea el código QR de tu clase para registrar tu asistencia.</p>
+  </div>
   <ion-button expand="full" (click)="scanQR()">Escanear QR</ion-button>
   <ion-button expand="full" color="danger" (click)="logout()">Logout</ion-button>
 </ion-content>
+
+<style>
+  .welcome-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .welcome-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .welcome-container p {
+    font-size: 16px;
+    color: #666;
+  }
+</style>

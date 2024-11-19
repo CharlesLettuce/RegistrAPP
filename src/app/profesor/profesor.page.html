@@ -6,12 +6,14 @@
 
 <ion-content>
     <ion-item>
-        <ion-label position="floating">Descripción de la clase</ion-label>
-        <ion-input [(ngModel)]="descripcionClase"></ion-input>
+        <ion-label position="floating">Asignatura</ion-label>
+        <ion-select [(ngModel)]="asignatura">
+            <ion-select-option *ngFor="let asignatura of asignaturas" [value]="asignatura">{{ asignatura }}</ion-select-option>
+        </ion-select>
     </ion-item>
     <ion-item>
-        <ion-label position="floating">Asignatura</ion-label>
-        <ion-input [(ngModel)]="asignatura"></ion-input>
+        <ion-label position="floating">Descripción de la clase</ion-label>
+        <ion-input [(ngModel)]="descripcionClase"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label position="floating">Observaciones</ion-label>
@@ -21,9 +23,7 @@
     <div *ngIf="qrCodeImage">
         <img [src]="qrCodeImage" alt="QR Code" />
     </div>
-    <ion-button expand="full" color="danger" (click)="logout()"
-        >Logout</ion-button
-    >
+    <ion-button expand="full" color="danger" (click)="logout()">Logout</ion-button>
 
     <ion-list>
         <ion-list-header>

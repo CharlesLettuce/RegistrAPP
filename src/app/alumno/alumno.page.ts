@@ -9,7 +9,13 @@ import { AuthService } from '../auth.service';
 })
 
 export class AlumnoPage implements OnInit {
+  usuario: any;
+
   constructor(private qrScanner: QRScanner, private authService: AuthService) {}
+
+  async ngOnInit() {
+    this.usuario = await this.authService.getUsuario();
+  }
 
   scanQR() {
     this.qrScanner.prepare().then((status: QRScannerStatus) => {
@@ -26,8 +32,8 @@ export class AlumnoPage implements OnInit {
       }
     }).catch((e: any) => console.log('Error is', e));
   }
+
   logout() {
     this.authService.logout();
   }
-  ngOnInit() {}
 }

@@ -2,54 +2,61 @@
   "usuarios": [
     {
       "id": "1",
-      "usuario": "ca.echeverriam",
+      "usuario": "carlos",
       "contrasena": "1234",
       "rol": "alumno"
     },
     {
       "id": "2",
-      "usuario": "bryan",
+      "usuario": "javier",
       "contrasena": "1234",
-      "rol": "profesor"
+      "rol": "admin"
     },
     {
       "id": "3",
-      "usuario": "maria",
+      "usuario": "bryan",
       "contrasena": "1234",
-      "rol": "alumno"
-    },
-    {
-      "id": "4",
-      "usuario": "juan",
-      "contrasena": "1234",
-      "rol": "profesor"
-    },
-    {
-      "id": "5",
-      "usuario": "ana",
-      "contrasena": "1234",
-      "rol": "alumno"
-    },
-    {
-      "id": "6",
-      "usuario": "pedro",
-      "contrasena": "1234",
-      "rol": "profesor"
+      "rol": "profesor",
+      "asignaturas": [
+        "Matemáticas",
+        "Base de datos"
+      ]
     }
   ],
   "clases": [
     {
-      "id": 1729780242286,
+      "id": 1732035437261,
       "profesor": {
-        "id": "2",
+        "id": "3",
         "usuario": "bryan",
         "contrasena": "1234",
-        "rol": "profesor"
+        "rol": "profesor",
+        "asignaturas": [
+          "Matemáticas",
+          "Base de datos"
+        ]
       },
-      "fecha": "2024-10-24T14:30:42.292Z",
-      "descripcion": "Clase de matematicas",
+      "fecha": "2024-11-19T16:57:17.264Z",
+      "descripcion": "",
       "asignatura": "Matemáticas",
-      "observaciones": "Ninguna"
+      "observaciones": ""
+    },
+    {
+      "id": 1732035651594,
+      "profesor": {
+        "id": "3",
+        "usuario": "bryan",
+        "contrasena": "1234",
+        "rol": "profesor",
+        "asignaturas": [
+          "Matemáticas",
+          "Base de datos"
+        ]
+      },
+      "fecha": "2024-11-19T17:00:51.597Z",
+      "descripcion": "",
+      "asignatura": "",
+      "observaciones": ""
     }
   ]
 }

@@ -32,6 +32,13 @@ const routes: Routes = [
     path: 'access-denied',
     loadChildren: () => import('./access-denied/access-denied.module').then( m => m.AccessDeniedPageModule)
   },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule),
+    canActivate: [RoleGuard],
+    data: { expectedRole: 'admin' }
+  },
+
 ];
 
 @NgModule({

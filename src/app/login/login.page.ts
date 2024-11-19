@@ -26,16 +26,18 @@ export class LoginPage implements OnInit {
     if (usuario) {
       await this.storage.set('usuario', usuario);
       if (usuario.rol === 'alumno') {
-        this.router.navigate(['/alumno']);
+      this.router.navigate(['/alumno']);
       } else if (usuario.rol === 'profesor') {
-        this.router.navigate(['/profesor']);
+      this.router.navigate(['/profesor']);
+      } else if (usuario.rol === 'admin') {
+      this.router.navigate(['/admin']);
       }
     } else {
       alert('Credenciales incorrectas');
     }
   }
-  logout() {
-    this.authService.logout();
+  forgotPassword() {
+    this.authService.forgotPassword();
   }
   ngOnInit() {
   }
