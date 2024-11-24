@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Admin</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Logout</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Crear Usuario</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Usuario</ion-label>
+        <ion-input [(ngModel)]="nuevoUsuario.usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Contraseña</ion-label>
+        <ion-input [(ngModel)]="nuevoUsuario.contrasena"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Correo</ion-label>
+        <ion-input [(ngModel)]="nuevoUsuario.correo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Rol</ion-label>
+        <ion-select [(ngModel)]="nuevoUsuario.rol">
+          <ion-select-option value="alumno">Alumno</ion-select-option>
+          <ion-select-option value="profesor">Profesor</ion-select-option>
+          <ion-select-option value="admin">Admin</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ng-container *ngIf="nuevoUsuario.rol === 'profesor'">
+        <ion-item *ngFor="let asignatura of nuevoUsuario.asignaturas; let i = index">
+          <ion-label>Asignatura {{i + 1}}</ion-label>
+          <ion-input [(ngModel)]="nuevoUsuario.asignaturas[i]"></ion-input>
+          <ion-button color="danger" (click)="eliminarAsignatura(i)">-</ion-button>
+        </ion-item>
+        <ion-button (click)="agregarAsignatura()">+</ion-button>
+      </ng-container>
+      <ion-button (click)="crearUsuario()">Crear Usuario</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Usuarios</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let usuario of usuarios">
+          {{ usuario.usuario }} - {{ usuario.rol }} - {{ usuario.correo }}
+          <ion-button slot="end" color="danger" (click)="eliminarUsuario(usuario.id)">Eliminar</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Crear Clase</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Descripción</ion-label>
+        <ion-input [(ngModel)]="nuevaClase.descripcion"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Asignatura</ion-label>
+        <ion-input [(ngModel)]="nuevaClase.asignatura"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Observaciones</ion-label>
+        <ion-input [(ngModel)]="nuevaClase.observaciones"></ion-input>
+      </ion-item>
+      <ion-button (click)="crearClase()">Crear Clase</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Clases</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let clase of clases">
+          {{ clase.descripcion }} - {{ clase.asignatura }}
+          <ion-button slot="end" color="danger" (click)="eliminarClase(clase.id)">Eliminar</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

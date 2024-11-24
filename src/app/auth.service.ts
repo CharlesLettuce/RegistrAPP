@@ -24,8 +24,20 @@ export class AuthService {
     return this.usuario ? this.usuario.rol : null;
   }
 
+  async getUsuario(): Promise<any> {
+    if (!this.usuario) {
+      this.usuario = await this.storage.get('usuario');
+    }
+    return this.usuario;
+  }
+
   async logout() {
     await this.storage.remove('usuario');
     this.router.navigate(['/login']);
+  }
+
+  async isAdmin(): Promise<boolean> {
+    const usuario = await this.getUsuario();
+    return usuario && usuario.rol === 'admin';
   }
 }

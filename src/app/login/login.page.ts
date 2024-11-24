@@ -12,10 +12,12 @@ import { AuthService } from '../auth.service';
 export class LoginPage implements OnInit {
   usuario: string;
   contrasena: string;
+  email: string;
 
   constructor(private router: Router, private storage: Storage, private authService: AuthService) {
     this.usuario = '';
     this.contrasena = '';
+    this.email = '';
     this.storage.create();
   }
 
@@ -29,16 +31,23 @@ export class LoginPage implements OnInit {
         this.router.navigate(['/alumno']);
       } else if (usuario.rol === 'profesor') {
         this.router.navigate(['/profesor']);
+      } else if (usuario.rol === 'admin') {
+        this.router.navigate(['/admin']);
       }
     } else {
       alert('Credenciales incorrectas');
     }
   }
-  logout() {
-    this.authService.logout();
+
+  async forgotPassword() {
+    if (this.email) {
+      alert('Correo de recuperación enviado');
+    } else {
+      alert('Por favor, ingresa tu correo electrónico');
+    }
   }
-  ngOnInit() {
-  }
+
+  ngOnInit() {}
 }
 
 interface Usuario {
