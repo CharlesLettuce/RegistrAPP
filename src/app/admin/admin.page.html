@@ -22,6 +22,10 @@
         <ion-input [(ngModel)]="nuevoUsuario.contrasena"></ion-input>
       </ion-item>
       <ion-item>
+        <ion-label>Correo</ion-label>
+        <ion-input [(ngModel)]="nuevoUsuario.correo"></ion-input>
+      </ion-item>
+      <ion-item>
         <ion-label>Rol</ion-label>
         <ion-select [(ngModel)]="nuevoUsuario.rol">
           <ion-select-option value="alumno">Alumno</ion-select-option>
@@ -37,6 +41,7 @@
         </ion-item>
         <ion-button (click)="agregarAsignatura()">+</ion-button>
       </ng-container>
+      <ion-button (click)="crearUsuario()">Crear Usuario</ion-button>
     </ion-card-content>
   </ion-card>
 
@@ -47,7 +52,7 @@
     <ion-card-content>
       <ion-list>
         <ion-item *ngFor="let usuario of usuarios">
-          {{ usuario.usuario }} - {{ usuario.rol }}
+          {{ usuario.usuario }} - {{ usuario.rol }} - {{ usuario.correo }}
           <ion-button slot="end" color="danger" (click)="eliminarUsuario(usuario.id)">Eliminar</ion-button>
         </ion-item>
       </ion-list>

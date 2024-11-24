@@ -1,20 +1,29 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Inicio</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>no se susa esto si ves esto salte de aca wtf eastergg</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div style="text-align: center; margin-top: 20px;">
+      <img src="/assets/logo.png" alt="Logo" width="150" style="border-radius: 50%;">
+    </div>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Bienvenido a RegistrAPP</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Gestiona tus registros de manera eficiente y sin esfuerzo.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <div style="display: flex; justify-content: center; margin-top: 20px;">
+      <ion-button color="primary" routerLink="/login">
+      <ion-icon name="log-in-outline" slot="start"></ion-icon>
+      Iniciar Sesión
+      </ion-button>
+    </div>
   </div>
 </ion-content>

@@ -9,7 +9,7 @@ import { AuthService } from '../auth.service';
 export class AdminPage implements OnInit {
   usuarios: any[] = [];
   clases: any[] = [];
-  nuevoUsuario: any = { usuario: '', contrasena: '', rol: '', asignaturas: ['']  };
+  nuevoUsuario: any = { usuario: '', contrasena: '', rol: '', correo: '', asignaturas: [''] };
   nuevaClase: any = { descripcion: '', asignatura: '', observaciones: '' };
 
   constructor(private authService: AuthService) {}
@@ -59,12 +59,15 @@ export class AdminPage implements OnInit {
     await fetch(`http://localhost:3000/clases/${id}`, { method: 'DELETE' });
     await this.cargarClases();
   }
+
   agregarAsignatura() {
     this.nuevoUsuario.asignaturas.push('');
   }
+
   eliminarAsignatura(index: number) {
     this.nuevoUsuario.asignaturas.splice(index, 1);
   }
+
   logout() {
     this.authService.logout();
   }

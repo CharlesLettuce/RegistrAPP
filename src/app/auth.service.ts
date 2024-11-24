@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
 
-// auth.service.ts
 @Injectable({
   providedIn: 'root'
 })
@@ -37,10 +36,6 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
-  async forgotPassword() {
-    await this.storage.remove('usuario');
-    this.router.navigate(['/login']);
-  }
   async isAdmin(): Promise<boolean> {
     const usuario = await this.getUsuario();
     return usuario && usuario.rol === 'admin';

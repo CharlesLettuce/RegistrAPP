@@ -4,22 +4,19 @@
       "id": "1",
       "usuario": "carlos",
       "contrasena": "1234",
-      "rol": "alumno",
-      "correo": "carlos@example.com"
+      "rol": "alumno"
     },
     {
       "id": "2",
       "usuario": "javier",
       "contrasena": "1234",
-      "rol": "admin",
-      "correo": "javier@example.com"
+      "rol": "admin"
     },
     {
       "id": "3",
       "usuario": "bryan",
       "contrasena": "1234",
       "rol": "profesor",
-      "correo": "bryan@example.com",
       "asignaturas": [
         "Matemáticas",
         "Base de datos"
